@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ACTIVE VOICE ARENA - Legal Writing Arcade</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="crt-overlay"></div>
+    <div class="scanlines"></div>
+
+    <div id="game-container">
+        <header id="game-header">
+            <div class="header-item">
+                <span class="label">SCORE</span>
+                <span id="score" class="value">0</span>
+            </div>
+            <div class="header-item title">
+                <h1>ACTIVE VOICE ARENA</h1>
+                <span class="subtitle">LEGAL WRITING TRAINER</span>
+            </div>
+            <div class="header-item">
+                <span class="label">LIVES</span>
+                <span id="lives" class="value">♥♥♥</span>
+            </div>
+        </header>
+
+        <div id="game-area">
+            <canvas id="game-canvas"></canvas>
+
+            <!-- Start Screen -->
+            <div id="start-screen" class="screen">
+                <div class="screen-content">
+                    <h2 class="blink">INSERT COIN</h2>
+                    <p class="instructions">
+                        Sentences will fall from above!<br><br>
+                        Press <span class="key">A</span> if ACTIVE voice<br>
+                        Press <span class="key">P</span> if PASSIVE voice<br><br>
+                        <span class="tip">TIP: In active voice, the subject performs the action.</span><br>
+                        <span class="example">"The attorney filed the motion" = ACTIVE</span><br>
+                        <span class="example">"The motion was filed by the attorney" = PASSIVE</span>
+                    </p>
+                    <button id="start-btn" class="arcade-btn">START GAME</button>
+                    <p class="credit">PRESS SPACE OR CLICK TO START</p>
+                </div>
+            </div>
+
+            <!-- Level Up Screen -->
+            <div id="level-screen" class="screen hidden">
+                <div class="screen-content">
+                    <h2>LEVEL <span id="level-display">1</span></h2>
+                    <p id="level-tip" class="level-tip"></p>
+                    <p class="blink">GET READY!</p>
+                </div>
+            </div>
+
+            <!-- Game Over Screen -->
+            <div id="gameover-screen" class="screen hidden">
+                <div class="screen-content">
+                    <h2 class="gameover-text">GAME OVER</h2>
+                    <p>FINAL SCORE: <span id="final-score">0</span></p>
+                    <p>ACCURACY: <span id="accuracy">0</span>%</p>
+                    <p id="rank" class="rank"></p>
+                    <div id="stats-breakdown">
+                        <p>Active Correct: <span id="active-correct">0</span></p>
+                        <p>Passive Correct: <span id="passive-correct">0</span></p>
+                    </div>
+                    <button id="restart-btn" class="arcade-btn">PLAY AGAIN</button>
+                    <p class="credit">PRESS SPACE TO CONTINUE</p>
+                </div>
+            </div>
+
+            <!-- Pause Screen -->
+            <div id="pause-screen" class="screen hidden">
+                <div class="screen-content">
+                    <h2 class="blink">PAUSED</h2>
+                    <p>Press ESC or P to resume</p>
+                </div>
+            </div>
+        </div>
+
+        <footer id="game-footer">
+            <div class="footer-item">
+                <span class="label">LEVEL</span>
+                <span id="level" class="value">1</span>
+            </div>
+            <div class="controls-hint">
+                <span class="key">A</span> = ACTIVE &nbsp;&nbsp; <span class="key">P</span> = PASSIVE &nbsp;&nbsp; <span class="key">ESC</span> = PAUSE
+            </div>
+            <div class="footer-item">
+                <span class="label">STREAK</span>
+                <span id="streak" class="value">0</span>
+            </div>
+        </footer>
+    </div>
+
+    <div id="feedback-popup" class="hidden">
+        <span id="feedback-text"></span>
+    </div>
+
+    <div id="explanation-popup" class="hidden">
+        <div id="explanation-content"></div>
+    </div>
+
+    <script src="sentences.js"></script>
+    <script src="game.js"></script>
+</body>
+</html>
