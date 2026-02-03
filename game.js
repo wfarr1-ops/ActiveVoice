@@ -258,6 +258,7 @@ class ActiveVoiceGame {
     }
 
     showLevelScreen() {
+        this.state = 'levelup';
         this.hideAllScreens();
         document.getElementById('level-display').textContent = this.level;
 
